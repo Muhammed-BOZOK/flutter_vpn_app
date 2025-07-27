@@ -1,16 +1,47 @@
-# flutter_vpn_app
+# Flutter VPN App
 
-A new Flutter project.
+A Flutter-based VPN application that allows users to:
 
-## Getting Started
+- Connect to different countries
+- Change locations
+- Search for specific locations
+- Switch between light and dark themes
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 📋 Table of Contents
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [Features](#features)
+- [Installation](#installation)
+- [Environment](#environment)
+- [Architecture](#architecture)
+- [Dependencies](#dependencies)
+- [License](#license)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 🚀 Features
+
+- **VPN Connection**: Connect to various countries to establish a VPN connection.
+- **Location Switching**: Easily change VPN locations from a list of available countries.
+- **Search Functionality**: Quickly find and connect to a VPN location by searching countries or cities.
+- **Theme Support**: Switch between light and dark themes via a settings screen.
+
+---
+
+## 🔧 Installation
+
+### Prerequisites
+
+- **Flutter SDK**: Ensure Flutter is installed on your system.
+- **Dart SDK**: Comes with Flutter.
+- **IDE**: VS Code, Android Studio, or IntelliJ recommended.
+- **Emulator or Physical Device**: For Android/iOS testing.
+
+### Steps
+
+#### 1. Clone the Repository
+
+```bash
+git clone https://github.com/[your-repo]/flutter-vpn-app.git
+cd flutter-vpn-app

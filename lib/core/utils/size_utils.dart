@@ -15,7 +15,7 @@ double get getHeight {
 }
 
 ///This method is used to set padding/margin (for the left and Right side) & width of the screen or widget according to the Viewport width.
-double gettDynamicWidth(double px) {
+double getDynamicWidth(double px) {
   return px.w;
 }
 
@@ -83,9 +83,9 @@ EdgeInsets getMarginOrPadding({
     bottom = all;
   }
   return EdgeInsets.only(
-    left: gettDynamicWidth(left ?? 0),
+    left: getDynamicWidth(left ?? 0),
     top: getDynamicHeight(top ?? 0),
-    right: gettDynamicWidth(right ?? 0),
+    right: getDynamicWidth(right ?? 0),
     bottom: getDynamicHeight(bottom ?? 0),
   );
 }

@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_vpn_app/core/theme/app_theme.dart';
+import 'package:get/get.dart';
 
-import 'screens/countries/countries_screen.dart';
+import 'ui/screens/bottom_nevigation.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+    statusBarIconBrightness: Brightness.light,
+  ));
+
   runApp(const MyApp());
 }
 
@@ -12,18 +20,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return ScreenUtilInit(
       designSize: Size(360, 800),
       minTextAdapt: true,
       splitScreenMode: true,
-      child: MaterialApp(
+      child: GetMaterialApp(
         title: 'Flutter VPN App',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        home: const CountriesScreen(),
+        theme: AppTheme.lightTheme,
+        home: const BottomNevigation(),
       ),
     );
   }

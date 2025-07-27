@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_vpn_app/core/constants/size_constant.dart';
+import 'package:flutter_vpn_app/core/extensions/context_extension.dart';
 
 class CustomSnackBar {
   static void show({
@@ -8,30 +10,18 @@ class CustomSnackBar {
     Color backgroundColor = Colors.black87,
     Color textColor = Colors.white,
     double borderRadius = 12.0,
-    IconData? icon,
   }) {
     ScaffoldMessenger.of(context).removeCurrentSnackBar();
 
     final snackBar = SnackBar(
-      content: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          if (icon != null) ...[
-            Icon(icon, color: textColor, size: 20),
-            const SizedBox(width: 8),
-          ],
-          Flexible(
-            child: Text(
-              message,
-              style: TextStyle(
-                color: textColor,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-              textAlign: TextAlign.center,
-            ),
+      content: IntrinsicWidth(
+        child: Center(
+          child: Text(
+            message,
+            style: context.textTheme.bodyLarge?.copyWith(color: textColor),
+            textAlign: TextAlign.center,
           ),
-        ],
+        ),
       ),
       backgroundColor: backgroundColor,
       duration: duration,
@@ -39,7 +29,9 @@ class CustomSnackBar {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(borderRadius),
       ),
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+      margin: const EdgeInsets.symmetric(horizontal: AppSize.padding2x, vertical: AppSize.padding * 0.5),
+      elevation: AppSize.elevation,
+      // padding: EdgeInsets.zero,
     );
 
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
